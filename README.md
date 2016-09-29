@@ -6,4 +6,12 @@ Project Structure is simple > Algorithm name > participant > files.
 ## Exercise 2 - Three
 The staircase is right-aligned, composed of # symbols and spaces, and has a height and width of n = number inserted. Example, number = 6. 
 Result:
-<br /><br /><br /><br /><br />#<br /><br /><br /><br />##<br /><br /><br />###<br /><br />####<br />###########
+
+Result | 
+------------ |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`#` <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`##`<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`###`<br />
+&nbsp;&nbsp;&nbsp;&nbsp;`####`<br />
+&nbsp;&nbsp;`#####`<br />
+`######`
