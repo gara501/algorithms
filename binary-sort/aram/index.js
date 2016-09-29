@@ -1,7 +1,7 @@
 var sortNumbers = (function () {
   var myArray = [];
   var elementKey = 0;
-  var bubleResponse = ''
+  var bubbleResponse = ''
   function getArray(maxArrayValue) {
     var initialTime = Date.now();
     var response = '';
@@ -44,7 +44,7 @@ var sortNumbers = (function () {
     } else {
       response = 'Array Empty';
     }
-    return bubleResponse;
+    return bubbleResponse;
   }
 
   function bubbleSearch(element, arrayData) {
@@ -57,8 +57,8 @@ var sortNumbers = (function () {
       var arrayLeft = arrayData.splice(0, centerVal);
       var arrayRight = arrayData.splice(1, (arrayData.length-1));
       if (element === center) {
-        bubleResponse = Date.now() - initialTime;
-        return bubleResponse;
+        bubbleResponse = Date.now() - initialTime;
+        return bubbleResponse;
       } else {
         if (element < center) {
           bubbleRun(element, arrayLeft);
@@ -67,8 +67,8 @@ var sortNumbers = (function () {
         }
       }
     } else {
-        bubleResponse = 'Element not found!';
-        return bubleResponse;
+        bubbleResponse = 'Element not found!';
+        return bubbleResponse;
     }
   }
 
