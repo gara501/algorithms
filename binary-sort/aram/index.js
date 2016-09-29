@@ -10,7 +10,6 @@ var sortNumbers = (function () {
       /* myArray.push(Math.floor(Math.random() * (maxArrayValue - 1)) + 1); */
       myArray.push(i);
       if (i === (maxArrayValue - 1)) {
-        console.log('Total Time Filling Array:', Date.now() - initialTime);
         response = 'Total Time Filling Array:', Date.now() - initialTime;
       }
     }
@@ -24,7 +23,6 @@ var sortNumbers = (function () {
       myArray.map(function(k, v) {
        if(k === element) {
          elementKey = v;
-         console.log('Spent time using lineal search:', Date.now() - initialTime);
          response = Date.now() - initialTime;
          return response;
        }
@@ -35,7 +33,7 @@ var sortNumbers = (function () {
     return response;
   }
 
-  function bubbleSort(element) {
+  function linealSearch(element) {
     var response = '';
     if (myArray.length > 0) {
       var initialTime = Date.now();
@@ -46,11 +44,10 @@ var sortNumbers = (function () {
     } else {
       response = 'Array Empty';
     }
-    console.log('BINARIO', bubleResponse);
     return bubleResponse;
   }
 
-  function bubbleRun(element, arrayData) {
+  function bubbleSearch(element, arrayData) {
     var initialTime = Date.now();
     if (arrayData.length > 0) {
       var minIndex = 0;
@@ -60,7 +57,6 @@ var sortNumbers = (function () {
       var arrayLeft = arrayData.splice(0, centerVal);
       var arrayRight = arrayData.splice(1, (arrayData.length-1));
       if (element === center) {
-        console.log('Element found, spent time in binary search:', Date.now() - initialTime);
         bubleResponse = Date.now() - initialTime;
         return bubleResponse;
       } else {
@@ -71,7 +67,6 @@ var sortNumbers = (function () {
         }
       }
     } else {
-        console.log('Element not found!');
         bubleResponse = 'Element not found!';
         return bubleResponse;
     }
@@ -79,16 +74,16 @@ var sortNumbers = (function () {
 
   return {
     getArray: getArray,
-    basicSort: basicSort,
-    bubbleSort: bubbleSort
+    linealSearch: linealSearch,
+    bubbleSearch: bubbleSearch
   };
 })();
 
 var submitButton = document.getElementById('sort-data');
 submitButton.addEventListener('click', function() {
   sortNumbers.getArray(+document.getElementById('arrayLimit').value);
-  var totalLineal = sortNumbers.basicSort(+document.getElementById('element').value);
-  var totalBinary =  sortNumbers.bubbleSort(+document.getElementById('element').value);
+  var totalLineal = sortNumbers.linealSearch(+document.getElementById('element').value);
+  var totalBinary =  sortNumbers.bubbleSearch(+document.getElementById('element').value);
   document.getElementById('response-normal').innerText = 'Spent time using lineal search: ' + totalLineal;
   document.getElementById('response-binary').innerText = 'Spent time using binary search: ' + totalBinary;
 });
