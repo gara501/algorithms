@@ -16,9 +16,8 @@ var three = (function () {
   }
 
   function processThree(arrayData) {
-    numbers = numbers + '\n';
     arrayData.map(function(val) {
-     for(var i=0; i<=(arrayData.length-val); i++) {
+     for(var i=1; i<=(arrayData.length-val); i++) {
        numbers += ' ';
      }
 
